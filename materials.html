@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gibson Isothermal Assembly</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<div class="row">
+							<div class="span9 offset1">
+								<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<div class="main-collapse nav-collapse collapse">
+									<ul class="nav">
+										<li><a href="./index.html">Summary</a></li>
+										<li><a href="./workflow.html">Workflow</a></li>
+										<li class="active"><a href="./materials.html">Materials</a></li>
+										<li class="divider-vertical"></li>
+										<li><a href="#" onClick="javascript:printManual();"><i class="icon-print"></i> Print</a></li>
+										<li><a href="./GibsonManual.pdf"><i class="icon-download-alt"></i> Download PDF</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container main-content">
+				<div class="row">
+					
+<div class="span9 offset1">
+	<div class="page-header"><h1>Materials</h1></div>
+	
+
+
+
+<h3>QIAGEN Kits</h3>
+<p>Commercially available kits from Qiagen are used in our lab routinely for Gel extraction and Plasmid isolation :  <a href="http://www.qiagen.com/Products/Catalog/Sample-Technologies/DNA-Sample-Technologies/DNA-Cleanup/QIAquick-Gel-Extraction-Kit">Qiagen QIAquick Gel Extraction Kit</a> (cat no: 28704 or 28706), <a href="http://www.qiagen.com/Products/Catalog/Sample-Technologies/DNA-Sample-Technologies/Plasmid-DNA/QIAprep-Spin-Miniprep-Kit">Qiagen Qiaprep Spin Mini Kit</a> (cat no: 27104 or 27106).</p>
+
+<h3>Primers</h3>
+<p>It’s worth shopping around. Be aware of steep price increases for primers over about 60 bp.</p>
+<p>Some suggestions for sources:</p>
+<ul>
+	<li><a href="http://www.idtdna.com/pages/products/dna-rna/custom-dna-oligos">ITD</a></li>
+	<li><a href="http://www.sigmaaldrich.com/life-science/custom-oligos/custom-dna/product-lines/standard-synthesis.html">Sigma Aldrich</a></li>
+	<li><a href="http://www.invitrogen.com/site/us/en/home/Products-and-Services/Product-Types/Primers-Oligos-Nucleotides/invitrogen-custom-dna-oligos.html">Invitrogen</a></li>
+</ul>
+
+<h3>Enzymes</h3>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Enzyme</th>
+			<th>Manufacturer</th>
+			<th>Product Code</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Phusion High-fidelity DNA Polymerase</td>
+			<td><a href="http://www.neb.com">NEB</a></td>
+			<td><a href="https://www.neb.com/products/m0530-phusion-high-fidelity-dna-polymerase">M0530</a></td>
+		</tr>
+		<tr>
+			<td>T5 exonuclease</td>
+			<td><a href="http://www.epibio.com/">Epicentre&reg; Biotechnologies</a></td>
+			<td><a href="http://www.cambio.co.uk/449/15/products/t5-exonuclease/">T5E4111K</a></td>
+		</tr>
+		<tr>
+			<td><i>Taq</i> DNA ligase</td>
+			<td><a href="http://www.neb.com">NEB</a></td>
+			<td><a href="https://www.neb.com/products/m0208-taq-dna-ligase">M0208</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Consumables</h3>
+
+<p>Most of the consumables necessary for Gibson Assembly will be standard laboratory stock; we have listed all the required items here for you to check against. These include stock required for generating chemically competent cells.
+
+<div class="row">
+	<div class="span3">
+		<ul>
+			<li>Ethanol</li>
+			<li><a class="a_tooltip" href="#" data-toggle="tooltip" title="Use solid PEG">PEG-8000</a></li>
+			<li>Tris&middot;HCl</li>
+			<li>MgCl<sub>2</sub></li>
+			<li>DTT</li>
+		</ul>
+	</div>
+	<div class="span3">
+		<ul>
+			<li>Sodium Acetate</li>
+			<li>Potassium Acetate</li>
+			<li>CaCl<sub>2</sub>&middot;2H<sub>2</sub>O</li>
+			<li>MnCl<sub>2</sub>&middot;4H<sub>2</sub>O</li>
+			<li>MgCl<sub>2</sub>&middot;6H<sub>2</sub>O</li>
+		</ul>
+	</div>
+	<div class="span3">
+		<ul>
+			<li>Glycerol</li>
+			<li>NAD</li>
+			<li>Nuclease free H<sub>2</sub>O</li>
+			<li><a class="a_tooltip" href="#" data-toggle="tooltip" title="100 mM">dNTP mix</a></td>
+		</ul
+	</div>
+</div>
+
+</div>
+
+				</div>
+			</div>
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<p class="muted">Version 0.22-20140321. <a href="mailto:ja131@cam.ac.uk">Contact</a>. &copy;2013 Ajioka Lab.</p>
+			</div>
+		</div>
+		<iframe id="printframe" src="GibsonManual.pdf"></iframe>
+		<script src="./js/jquery-1.9.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function printManual()
+			{
+				var frame = $('iframe#printframe')[0];
+				frame.focus();
+				frame.contentWindow.print();
+			}
+			$('.a_tooltip').tooltip({placement:'right'});
+		</script>
+	</body>
+</html>

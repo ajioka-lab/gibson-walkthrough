@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gibson Isothermal Assembly</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<div class="row">
+							<div class="span9 offset1">
+								<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<div class="main-collapse nav-collapse collapse">
+									<ul class="nav">
+										<li class="active"><a href="./index.html">Summary</a></li>
+										<li><a href="./workflow.html">Workflow</a></li>
+										<li><a href="./materials.html">Materials</a></li>
+										<li class="divider-vertical"></li>
+										<li><a href="#" onClick="javascript:printManual();"><i class="icon-print"></i> Print</a></li>
+										<li><a href="./GibsonManual.pdf"><i class="icon-download-alt"></i> Download PDF</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+<header>
+<div class="container">
+	<div class="row">
+		<div class="span8 offset1">
+			<h1 style="font-size:5em;">Gibson Assembly</h1>
+			<h4 style="padding-left:3em; font-size:1.5em; padding-top:0.3em;">Fast, flexible and cost-effective DNA assembly</h4>
+		</div>
+	</div>
+</header>
+
+			<div class="container main-content">
+				<div class="row">
+					
+<div class="span9 offset1">
+
+
+
+
+<div class="page-header"><h2>Summary</h2></div>
+Gibson Isothermal Assembly is a method of assembling multiple DNA sequences during a 1 hour incubation in a single reaction volume [<a href="http://www.synbio.org.uk/gibson/resources/Gibson2009_nmeth.1318.pdf">Gibson et al. 2009</a>]. 
+
+<h4>Benefits</h4>
+<ul>
+	<li>No forbidden sequences - DNA sequences can be joined without regard to restriction sites.</li>
+	<li>Complete control of product sequence (scarless).</li>
+	<li>&gt;10 DNA sequences can be assembled in a single 1 hour reaction.</li>
+</ul>
+
+<h4>Disadvantages</h4>
+<ul>
+	<li>Cost and delivery time of custom primers.</li>
+	<li>Rearrangements are possible between regions of homology close to the termini of substrate sequences (at low frequency).</li>
+	<li>Secondary structure can reduce assembly efficiency.</li>
+</ul>
+
+<h3>The scope of this manual</h3>
+
+This manual is intended primarily for users with graduate-level knowledge of molecular biology. It introduces users to the principles of Gibson Isothermal Assembly and its application, as well as providing guidance on implementing an efficient workflow and on troubleshooting. The focus is on primer design and the assembly reaction, but also includes descriptions of other steps in a typical Gibson Isothermal Assembly in order to giving the reader an overview of a complete workflow.
+
+
+<h2>The Gibson Assembly Reaction</h2>
+<p>Complementary termini of ~40 bp sequence homology determine the order in which substrate sequences are assembled. The reaction is performed during a 1 hour incubation at 50 &deg;C and proceeds by i) forming 3’ overhangs, ii) annealing complementary termini, iii) gap-filling and iv) nick-sealing:</p>
+
+<p><strong>Key reaction components:</strong></p>
+
+	<img src="./img/summary_0.png" alt="Two fragments of DNA with homologous regions"><br><br>
+<ol class="summary_list">
+	<li>T5 exonuclease excises nucleotides from the 5&prime; end of dsDNA molecules, exposing 3&prime; overhangs. (Similar reactions will occur at all DNA termini, but for the sake of simplicity we show one assembly junction only).
+	<img src="./img/summary_1.png" alt="T5 exonuclease chews back from the 5&prime; end"></li>
+	<li>Complementary  3&prime; overhangs anneal.
+	<img src="./img/summary_2.png" alt="Complementary  3&prime; overhangs anneal."></li>
+	<li>T5 exonuclease (unstable at 50&deg;C) denatures, exposing free 3&prime; overhangs  to Phusion DNA polymerase.
+	<img src="./img/summary_3.png" alt="T5 exonuclease denatures."></li>
+	<li>Phusion DNA polymerase fills the 3&prime; overhang.
+	<img src="./img/summary_4.png" alt="Phusion DNA polymerase fills the 3&prime; overhang."></li>
+ 	<li>The DNA polymerase releases the DNA once the overhangs are filled, allowing Taq DNA ligase to seals nicks in the phosphodiester backbone (i.e. catalyse the formation of phosphodiester bonds between 5&prime; phosphate and 3&prime; hydroxyl groups).
+	<img src="./img/summary_5.png" alt="Taq DNA ligase seals nicks."></li>
+</ol>
+
+<p>More than 10 sequences can be assembled in a single reaction, resulting in linear or circular DNA as desired.</p>
+<img src="./img/summary_multiple_1.png">
+
+<p>Substrate DNA sequences can be produced easily by PCR.  The assembly reaction can be used directly to transform E. coli cells, without prior purification. DNA assembly using Gibson Isothermal Assembly is therefore flexible, quick and inexpensive.</p>
+
+
+<p><strong>Refs</strong></p>
+<p>Gibson, Daniel G, Lei Young, Ray-Yuan Chuang, J Craig Venter, Clyde A Hutchison, and Hamilton O Smith. “Enzymatic Assembly of DNA Molecules up to Several Hundred Kilobases.” <em>Nature Methods</em> 6, no. 5 (April 12, 2009): 343–345. <a href="http://http://dx.doi.org/10.1038/nmeth.1318">doi:10.1038/nmeth.1318</a>.</p>
+<p><a href="http://www.synbio.org.uk/dna-assembly/guidetogibsonassembly.html">http://www.synbio.org.uk/dna-assembly/guidetogibsonassembly.html</a></p>
+</div>
+
+				</div>
+			</div>
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<p class="muted">Version 0.22-20140321. <a href="mailto:ja131@cam.ac.uk">Contact</a>. &copy;2013 Ajioka Lab.</p>
+			</div>
+		</div>
+		<iframe id="printframe" src="GibsonManual.pdf"></iframe>
+		<script src="./js/jquery-1.9.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function printManual()
+			{
+				var frame = $('iframe#printframe')[0];
+				frame.focus();
+				frame.contentWindow.print();
+			}
+			$('.a_tooltip').tooltip({placement:'right'});
+		</script>
+	</body>
+</html>

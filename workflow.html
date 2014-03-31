@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gibson Isothermal Assembly</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<div class="row">
+							<div class="span9 offset1">
+								<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<div class="main-collapse nav-collapse collapse">
+									<ul class="nav">
+										<li><a href="./index.html">Summary</a></li>
+										<li class="active"><a href="./workflow.html">Workflow</a></li>
+										<li><a href="./materials.html">Materials</a></li>
+										<li class="divider-vertical"></li>
+										<li><a href="#" onClick="javascript:printManual();"><i class="icon-print"></i> Print</a></li>
+										<li><a href="./GibsonManual.pdf"><i class="icon-download-alt"></i> Download PDF</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container main-content">
+				<div class="row">
+					
+<div class="span3">
+	<div style="margin: 20px 0 30px;" class="affix"><h1 style="margin-top:0px;">Workflow</h1></div>
+	<div class="sidebar-nav">
+		<ul class="nav-list nav-stacked affix flowchart">
+			<li class="active"><a class="btn btn-flowchart" href="#workflow" data-toggle="tab" style="text-align:center"><strong>Overview</strong></a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>			
+			<li><a class="btn btn-flowchart" href="#design" data-toggle="tab"><strong>1</strong>&nbsp;&nbsp;&nbsp;Design Goal Sequence</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#primers" data-toggle="tab"><strong>2</strong>&nbsp;&nbsp;&nbsp;Primer Design</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#pcr" data-toggle="tab"><strong>3</strong>&nbsp;&nbsp;&nbsp;PCR Amplification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#gel" data-toggle="tab"><strong>4</strong>&nbsp;&nbsp;&nbsp;Gel Purification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#assembly" data-toggle="tab"><strong>5</strong>&nbsp;&nbsp;&nbsp;Isothermal Assembly</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#transformation" data-toggle="tab"><strong>6</strong>&nbsp;&nbsp;&nbsp;Transformation</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#plasmid" data-toggle="tab"><strong>7</strong>&nbsp;&nbsp;&nbsp;Plasmid Purification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#verification" data-toggle="tab"><strong>8</strong>&nbsp;&nbsp;&nbsp;Sequence Verification</a></li>
+		</ul>
+	</div>
+</div>
+<div class="span9">
+	<div class="tab-content">
+		<div class="tab-pane active" id="workflow">
+		
+
+
+
+
+
+<div class="page-header"><h1>Overview</h1></div>
+
+<p>This is a description of a typical DNA assembly workflow from designing goal sequences through to sequence verification. Navigate the workflow using the buttons in the flow diagram on the left.</p>
+
+<p>The whole workflow is available as a download <a href="./GibsonManual.pdf">here</a>.</p>
+		</div>
+		<div class="tab-pane" id="design">
+		
+
+
+
+
+
+<div class="page-header"><h1>Design Goal Sequence</h1></div>
+
+<h2>Manual Design</h2>
+
+<p>A typical workflow:</p>
+<ol>
+	<li>Create computer folder to contain sequence files.</li>
+	<li>Identify source DNA sequences from:<ul>
+		<li>personal or laboratory sequence library</li>
+		<li>public repository  (e.g. <a href="http://www.ncbi.nlm.nih.gov/genbank/">GenBank</a>, <a href="http://partsregistry.org/Main_Page">partsregistry</a>)</li>
+	</ul></li>
+	<li>Download sequences in GenBank format (.gb, .gbk)</li>
+	<li>Open DNA sequences in preferred nucleotide sequence editor e.g. <a href="http://biologylabs.utah.edu/jorgensen/wayned/ape/">ApE</a><ul>
+		<li>Using the GenBank format with a DNA sequence editor enables sequence annotations to be viewed and modified; this is particular useful for more complex designs.</li>
+	</ul></li>
+	<li>Create and name a new sequence file e.g. goalseq1.gb</li>
+	<li>Cut and paste substrate sequences from source sequence files to the goal sequence file to form the goal sequence. Make custom changes to the goal sequence (e.g. codon optimisation).<ul>
+		<li>It is useful for primer design and future reference to ensure that assembly junctions are easily identified e.g. using coloured annotation to distinguish substrate DNA sequences.</li>
+	</ul></li>
+</ol>
+
+<h2>Gibthon Construct Designer</h2>
+
+<p><a href="http://www.gibthon.org">Gibthon Construct Designer</a> automates much of the process of designing constructs for Gibson Assembly. Firstly you will need to import the sequences you wish to design with. These may by imported from a GenBank (.gb, .gbk) file on your computer, the <a href="http://www.ncbi.nlm.nih.gov/genbank/">GenBank database itself</a>, or the <a href="http://partsregistry.org/Main_Page">Registry of Standard Biological Parts</a>. This will generate a library of parts for you to use.</p>
+
+<div class="accordion" id="Gibthon0_screenshot_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#Gibthon0_screenshot_accordion" href="#Gibthon0_screenshot"><i class="icon icon-chevron-down"></i><strong>Screenshot</strong></a>
+		</div>
+		<div id="Gibthon0_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
+				
+<img src="./img/Gibthon0.png" alt="Library of parts in the Gibthon Construct Designer.">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<p>Once the relevant parts have been uploaded to Gibthon, you canuse a simple drag-and-drop editor to design your desired construct, and procede to automated design of primers.</p>
+
+<div class="accordion" id="Gibthon1_screenshot_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#Gibthon1_screenshot_accordion" href="#Gibthon1_screenshot"><i class="icon icon-chevron-down"></i><strong>Screenshot</strong></a>
+		</div>
+		<div id="Gibthon1_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
+				
+<img src="./img/Gibthon1.png" alt="Example construct.">
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="tab-pane" id="primers">
+		
+
+
+
+
+
+<div class="page-header"><h1>Design Primers</h1></div>
+<p>40 bp of complementary sequence at the termini of substate DNA sequences is sufficient for the Gibson assembly reaction. This can be achieved by adding 20 bp from adjacent substrate sequences.</p>
+<p>Note: as little as 20 bp complementary sequence may be sufficient for assembly; this usually comes at a cost to efficiency</p>
+
+<h4>Example workflow:</h4>
+Example workflow:
+<ol>
+	<li>Take 60 bp around each junction between substrate sequences<ul>
+		<li>The target primer size will still be approximately 40 bp; starting with 60 bp facilitates optimization because potential secondary structures affecting a range of primers designs can be assessed simultaneously.<div class="accordion" id="ape_primer_screenshot_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#ape_primer_screenshot_accordion" href="#ape_primer_screenshot"><i class="icon icon-chevron-down"></i><strong>Screenshot</strong></a>
+		</div>
+		<div id="ape_primer_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<img src="./img/primerdesign_ApE_1.png" alt="Primer design in APE">
+			</div>
+		</div>
+	</div>
+</div></li>
+	</ul></li>
+	<li>Analyse the 60 bp sequences e.g. using IDT’s <a href="http://eu.idtdna.com/analyzer/Applications/OligoAnalyzer/">OligoAnalyzer</a></li>
+	<li>Optimize the primer sequences as per standard PCR (see guides for primer design for PCR for further tips). Note that it may be difficult and unnecessary to meet all desirable primer design criteria simultaneously.<ul>
+		<li>Parameters to consider optimising:<ol>
+			<li>Overlap length: Try to keep >15nt from each substrate sequence</li>
+			<li>Melting temperature: Aim to match primer pair Tm values within 4 &deg;C.</li>
+			<li>Secondary structure: Make sure any hairpins have low Tm (typically less that 40 &deg;C). Any hairpin with Tm over ~30 &deg;C, should be >5bp from 3&prime; end or primers.</li>
+			<li>Primer Dimers</li>
+		</ol></li>
+		<li>If any of the above parameters are unacceptable, then consider adjusting the following variables:<ol>
+			<li>Primer length</li>
+			<li>Primer position relative to junction</li>
+		</ol></li>
+	</ul></li>
+	<li>Order primers</li>
+</ol>
+
+<h2>Gibthon Primer Design</h2>
+
+<p>Having designed your construct in the <a href="http://www.gibthon.org">Gibthon Construct Designer</a>, you will be able to automatically generate and design primers.</p>
+<p>The primer design engine used by Gibthon scores primers on the following metrics:</p>
+<ul>
+	<li>Melting temperature</li>
+	<li>Mis-priming</li>
+	<li>Self-priming</li>
+	<li>Secondary structures</li>
+	<li>Primer dimers</li>
+	<li>Unique regions of homology</li>
+</ul>
+<p>You will then be presented with an overview of the generated primers, along with the option to either fix manually or attempt to automatically fix any detected issues.</p>
+
+<div class="accordion" id="Gibthon2_screenshot_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#Gibthon2_screenshot_accordion" href="#Gibthon2_screenshot"><i class="icon icon-chevron-down"></i><strong>Screenshot</strong></a>
+		</div>
+		<div id="Gibthon2_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
+				
+<img src="./img/Gibthon2.png" alt="Automatically designed primers.">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<p>At the end of the process you will be given a datasheet for each primer, as well as protocols tailored to the specifications of the primers.</p>
+
+<div class="accordion" id="Gibthon3_screenshot_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#Gibthon3_screenshot_accordion" href="#Gibthon3_screenshot"><i class="icon icon-chevron-down"></i><strong>Screenshot</strong></a>
+		</div>
+		<div id="Gibthon3_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
+				
+<img src="./img/Gibthon3.png" alt="Example primer datasheet">
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+		</div>
+		<div class="tab-pane" id="pcr">
+		
+
+
+
+
+
+<div class="page-header"><h1>PCR Amplification</h1></div>
+<p>Use a high fidelity DNA polymerase such as NEB Phusion&reg;.</p>
+<h4>Standard PCR Recipe</h4>
+<div class="accordion" id="pcr_recipe_protocol_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#pcr_recipe_protocol_accordion" href="#pcr_recipe_protocol"><i class="icon icon-chevron-down"></i><strong>Protocol</strong></a>
+		</div>
+		<div id="pcr_recipe_protocol" class="accordion-body collapse">
+			<div class="accordion-inner accordion-table">
+				
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Component</th>
+			<th>Final Concentration</th>
+			<th>Volume per reaction (&mu;l)</th>
+			<th>Master Mix (&mu;l for 10 reactions)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nuclease-free water</td>
+			<td></td>
+			<td>32.5</td>
+			<td>357.5</td>
+		</tr>
+		<tr>
+			<td>5X Phusion HF or GC Buffer</td>
+			<td>1X</td>
+			<td>10</td>
+			<td>110</td>
+		</tr>
+		<tr>
+			<td>10mM dNTPs</td>
+			<td>200 &mu;M</td>
+			<td>1</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>10 &mu;M Forward Primer</td>
+			<td>0.5 &mu;M</td>
+			<td>2.5</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>10 &mu;M Reverse Primer</td>
+			<td>0.5 &mu;M</td>
+			<td>2.5</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Template DNA</td>
+			<td>&lt; 250 ng</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>DMSO (optional)</td>
+			<td>3%</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Phusion DNA Polymerase</td>
+			<td>1.0 units/50 &mu;l PCR</td>
+			<td>0.5</td>
+			<td>5.5</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Total</th>
+			<th></th>
+			<th>50</th>
+			<th>484</th>
+		</tr>
+	</tfoot>
+</table>
+
+			</div>
+		</div>
+	</div>
+</div>
+<p>GC Buffer can be used as standard buffer.</p>
+<p>0.5X HF buffer yields more consistent results than 1X.</p>
+<h4>Standard PCR program</h4>
+<div class="accordion" id="pcr_protocol_protocol_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#pcr_protocol_protocol_accordion" href="#pcr_protocol_protocol"><i class="icon icon-chevron-down"></i><strong>Protocol</strong></a>
+		</div>
+		<div id="pcr_protocol_protocol" class="accordion-body collapse">
+			<div class="accordion-inner accordion-table">
+				
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Step</th>
+			<th>Temperature</th>
+			<th>Time</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Denaturation</td>
+			<td>98&deg;C</td>
+			<td>30 s</td>
+		</tr>
+		<tr>
+			<td rowspan=3>30 cycles</td>
+			<td>98&deg;C</td>
+			<td>15 s</td>
+		</tr>
+		<tr>
+			<td class="border-fix">45-72&deg;C*</td>
+			<td>30 s</td>
+		</tr>
+		<tr>
+			<td class="border-fix">72&deg;C</td>
+			<td>45 s/kb</td>
+		</tr>
+		<tr>
+			<td>Final Extension</td>
+			<td>72&deg;C</td>
+			<td>8 minutes</td>
+		</tr>
+		<tr>
+			<td>Hold</td>
+			<td>4&deg;C</td>
+			<td> - </td>
+		</tr>
+	</tbody>
+</table>
+
+			</div>
+		</div>
+	</div>
+</div>
+<p>*Annealing temperatures are typically 4&deg;C lower than lowest primer Tm</p>
+<div class="accordion" id="pcr_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#pcr_notes_accordion" href="#pcr_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="pcr_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+	<p>The following parameters can be adjusted to optimize PCR efficiency and specificity (see the <a href="https://www.neb.com/protocols/1/01/01/pcr-protocol-m0530">NEB protocol</a> for further details):<br />
+Annealing temperature<br />
+[Mg]<br />
+Polymerase concentration<br />
+GC buffer<br />
+DMSO<br /><br />
+
+Primers stocks can be used at 100 mM in sterile ddH<sub>2</sub>O. <br />
+For more controlled conditions, primers may be resuspended in 1:0.1 TE buffer pH 8.0 (1mM Tris, 0.1 mM EDTA) </p>
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="tab-pane" id="gel">
+		
+
+
+
+
+
+<div class="page-header"><h1>Gel Purification</h1></div>
+<p>Gel purification is a convenient means of separating the desired products of PCR amplification from off-target amplicons and template DNA. Commercial kits for purification of PCR products from gel matrix are quick and easy to use, e.g. Qiagen QIAquick Gel Extraction Kit.</p>
+<p>The below protocol for purification of PCR products is a modified version of the Qiagen protocol employing Qiagen QIAquick Gel Extraction Kit.</p>
+<ol>
+	<li><strong>Excise the DNA fragment from the agarose gel.</strong> DNA fragment can be excised from the gel with a scalpel or gel excision tips for more standard gel volumes.  Place the excised gel fragment into a colorless tube. If it is not possible to continue immediately with step 2, the excised gel fragment can be stored in the fridge at 4 &deg;C overnight.</li>
+	<li><strong>Add 3 volumes of Buffer QG to 1 volume of gel</strong> (100 mg ~ 100 &mu;l). For >2% agarose gels, add 6 volumes of Buffer QG. The maximum amount of gel slice per QIAquick column is 400 mg.</li>
+	<li><strong>Incubate at 50&deg;C for 10 min.</strong> Vortex every 3 minutes for faster dissolving of the gel fragment. Make sure that the gel fragment has dissolved completely. The color of the mixture after the gel fragment has dissolved completely should be yellow similar to the color of the Buffer QG, if the color is orange or violet adjust pH with 10 &mu;l of 3 M sodium acetate, pH 5.0.</li>
+	<li><strong>Add 1 volume of isopropanol.</strong> This is important to increase yield of DNA fragments &lt;500 bp and &gt;4 kb.</li>
+	<li><strong>Apply the mixture to the QIAquick column placed in a provided 2 ml collection tube and centrifuge at 13000 RPM for 1 min.</strong> The maximum volume for one round of centrifugation is 800 &mu;l. Reuse the same column for higher volumes.</li>
+	<li><strong>Discard flow-through and place QIAquick column back in the same collection tube.</strong></li>
+	<li><strong>(Optional) Add 0.5ml of BufferQG toQIAquick column and centrifuge at 13000 RPM for 1 min.</strong> This removes residual agarose, which is important if the DNA will be used for direct sequencing, in vitro transcription, or microinjection.</li>
+	<li><strong>Add 0.75 ml of Buffer PE to QIAquick column and centrifuge at 13000 RPM for 1 min.</strong> (Recommended: let the Qiaquick column stand 2-5 min after addition of Buffer PE).</li>
+	<li><strong>Discard flow-through and centrifuge the QIAquick column at 13000 RPM for an additional 1 min.</strong></li>
+	<li><strong>Place QIAquick column into a clean 1.5 ml microcentrifuge tube.</strong></li>
+	<li><strong>To elute DNA from the QIAquick column, add 50 &mu;l of the Buffer EB or ddH<sub>2</sub>O (pH 7.0-8.5) to the center of the column's membrane and centrifuge at 13000 RPM for 1 min.</strong> For increased DNA concentration, use 30-36 &mu;l of the Buffer EB or ddH<sub>2</sub>O and let the column stand for 1-3 min before centrifugation.</li>
+</ol>
+<div class="accordion" id="gel_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#gel_notes_accordion" href="#gel_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="gel_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+<ul>
+	<li>Gel bands can be efficiently excised using gel excision tips, this also results in standard gel volumes.</li>
+	<li>Commercial kits for purification of PCR products from gel matrix are quick and easy to use, e.g. Qiagen QIAquick Gel Extraction Kit.</li>
+	<li>The quality of purified DNA can be assessed using NanoDrop spectrophotometers. Ethanol precipitation or commercial clean-up kits can be use to further purify DNA.</li>
+</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="tab-pane" id="assembly">
+		
+
+
+
+
+
+
+<div class="page-header"><h1>Isothermal Assembly</h1></div>
+<h4>Preparation</h4>
+<ol>
+	<li><strong>5X ISO Buffer</strong><!--<button class="btn btn-primary btn-small noprint" data-toggle="collapse" data-target="#ISO">Detail</button>-->
+	<div class="accordion" id="ISO_protocol_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#ISO_protocol_accordion" href="#ISO_protocol"><i class="icon icon-chevron-down"></i><strong>Protocol</strong></a>
+		</div>
+		<div id="ISO_protocol" class="accordion-body collapse">
+			<div class="accordion-inner accordion-table">
+				
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Components</th>
+				<th colspan=3>Quantity</th>
+				<th>Units</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>PEG-8000</td>
+				<td>0.25</td>
+				<td>0.5</td>
+				<td>1.5</td>
+				<td>g</td>
+			</tr>
+			<tr>
+				<td>1 M Tris-HCl pH 7.5</td>
+				<td>0.5</td>
+				<td>1</td>
+				<td>3</td>
+				<td>ml</td>
+			</tr>
+			<tr>
+				<td>2 M MgCl<sub>2</sub></td>
+				<td>25</td>
+				<td>50</td>
+				<td>150</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr>
+				<td><a class="a_tooltip" href="#" data-toggle="tooltip" title="25 mM each: dGTP, dCTP, dATP, dTTP">100 mM dNTP mix</a></td>
+				<td>40</td>
+				<td>80</td>
+				<td>240</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr>
+				<td>1 M DTT</td>
+				<td>50</td>
+				<td>100</td>
+				<td>300</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr>
+				<td>100 mM NAD</td>
+				<td>50</td>
+				<td>100</td>
+				<td>300</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr>
+				<td>dH<sub>2</sub>O to</td>
+				<td>0.335</td>
+				<td>0.67</td>
+				<td>2.01</td>
+				<td>ml</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Final volume</th>
+				<th>1</th>
+				<th>2</th>
+				<th>6</th>
+				<th>ml</th>
+			</tr>
+		</tfoot>
+	</table>
+	
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="accordion" id="ISO_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#ISO_notes_accordion" href="#ISO_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="ISO_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+		<ul> 
+			<li>Store at -20 &deg;C in 320 &mu;l aliquots.</li>
+			<li>PEG stock solutions are difficult to measure out due to high viscosity. We recommend weighing PEG out in power form. Complete sterility is not essential as the 5X ISO Buffer and 1.33X Assembly Master Mix are stored frozen and the assembly reaction is performed at 50 &deg;C.</li>
+		</ul>
+	
+			</div>
+		</div>
+	</div>
+</div>
+	</li>
+	<li><strong>1.33X Assembly Master Mix</strong>
+	<div class="accordion" id="MM_protocol_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#MM_protocol_accordion" href="#MM_protocol"><i class="icon icon-chevron-down"></i><strong>Protocol</strong></a>
+		</div>
+		<div id="MM_protocol" class="accordion-body collapse">
+			<div class="accordion-inner accordion-table">
+				
+	<table class="table table-bordered table-striped"> 
+		<thead>
+			<tr> 
+				<th>Components</th>
+				<th colspan=2>Quantity</th>
+				<th>Units</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr> 
+				<td>5X ISO Buffer</td>
+				<td>100</td>
+				<td>320</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr> 
+				<td>10 U/ml T5 exonuclease*</td>
+				<td>0.2</td>
+				<td>0.64</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr> 
+				<td>2 U/ml Phusion polymerase</td>
+				<td>6.25</td>
+				<td>20</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr> 
+				<td>40 U/ml Taq ligase</td>
+				<td>50</td>
+				<td>160</td>
+				<td>&mu;l</td>
+			</tr>
+			<tr> 
+				<td>dH<sub>2</sub>O</td>
+				<td>218.55</td>
+				<td>699.36</td>
+				<td>&mu;l</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr> 
+				<th>Total Volume</th>
+				<th>375</th>
+				<th>1200</th>
+				<th>&mu;l</th>
+			</tr>
+		</tfoot>
+	</table>
+	
+			</div>
+		</div>
+	</div>
+</div>
+	<p>*Optimised for 20-150 bp sequence homology overlaps.</p>
+	</li>
+	<li><strong>Measure the DNA concentration (ng/&mu;l) of each assembly piece (optional)</strong></li>
+</ol>		
+<h4>Assembly</h4>
+<ol> 
+	<li>Thaw 4 &mu;l aliquot of Assembly Master Mix (AMM), keep on ice.</li>
+	<li>Add assembly fragments to AMM to a final volume of 5.2 &mu;l, e.g. 0.3 &mu;l vector, 0.9 &mu;l insert
+	<div class="accordion" id="concentration_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#concentration_notes_accordion" href="#concentration_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="concentration_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+		<p>The above rule of thumb is reliable; however, for more controlled conditions the concentrations of DNA fragments can be measured and combined as follows.</p>
+		<p>10-100 ng vector + X ng insert, where X equals:</p>										
+		<ul> 
+			<li>5 x vector concentration for inserts of less than 300 bp</li>
+			<li>3 x vector concentration for inserts of 300-1000 bp</li>
+			<li>1 x vector concentration for inserts of 1000-3000 bp</li>
+		</ul>
+	
+			</div>
+		</div>
+	</div>
+</div>
+	</li>
+	<li>Incubate the assembly reaction at 50 &deg;C for 60 minutes then place on ice.</li>
+	<li>Transform Assembly Reaction into competent <i>Escherichia coli</i>, e.g. 5.2 &mu;l Assembly Reaction to 100 &mu;l competent cells.		
+	<div class="accordion" id="efficiency_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#efficiency_notes_accordion" href="#efficiency_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="efficiency_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+		<p>The following factors have a significant impact in the efficiency of assembly.</p>
+		<ul>
+			<li>Ratio of purified DNA to Assembly Master Mix
+			<p>4 &mu;l AMM and 1.2 &mu;l purified DNA usually results in 10-100 transformants. The ratio of AMM to purified DNA can be optimized for problem assemblies (15 &mu;l AMM plus 5 &mu;l DNA purified DNA is another common composition).</p></li>
+			<li>DNA quality is important - check purity</li>
+			<li>Competent cells
+			<p>Poor competence of recipient <i>E. coli</i> cells is a common problem with DNA assembly protocols. Heat shock transformation of chemically competent cells, such as those prepared using the CCMB80 or TSS methods, has yielded consistently good results in many labs (10-100 colonies for the above protocol. For low efficiency reactions, electroporation can increase the transformation efficiency 10-fold.</p></li>
+		</ul>
+	
+			</div>
+		</div>
+	</div>
+</div>
+	</li>
+</ol>
+		</div>
+		<div class="tab-pane" id="transformation">
+		
+
+
+
+
+
+
+<div class="page-header"><h1>Transformation</h1></div>
+
+<p>Chemically competent or electrocompetent cells prepared prior to transformation can be transformed by chemical transformation or electroporation, respectively.</p>
+<p>Electroporation has higher transformation efficiency, while chemical transformation is faster and has a lower chance of errors.</p>
+<p>This protocol has been adapted from the following protocol: <a href="http://openwetware.org/wiki/Bacterial_transformation">http://openwetware.org/wiki/Bacterial_transformation</a></p>
+<h3>Preparation of chemically competent cells</h3>
+<ol>
+	<li>Prepare sterile-filtered CCMB80 buffer and store at 4 &deg;C
+		<ul>
+			<li>10 mM KOAc pH 7.0 (10 ml of a 1M stock/L)</li>
+			<li>80 mM CaCl<sub>2</sub>.2H<sub>2</sub>O (11.8g/L)</li>
+			<li>20 mM MnCl<sub>2</sub>.4H<sub>2</sub>O (4.0g/L)</li>
+			<li>10 mM MgCl<sub>2</sub>.6H<sub>2</sub>O (2.0g/L)</li>
+			<li>10% glycerol (100ml/L)</li>
+			<li>pH 6.4</li>										
+		</ul>
+	</li>
+	<li>Pre-chill centrifuge and eppendorf tubes</li>
+	<li>Innoculate 250 ml of SOB medium with cells and grow at 30 &deg;C to an OD600 = 0.3</li>
+	<li>Centrifuge, 3000 RPM, 10 min, 4 &deg;C and discard supernatant</li>
+	<li>Gently resuspend cells in 80 ml of ice cold CCMB80 buffer</li>
+	<li>Incubate on ice for 20 min</li>
+	<li>Centrifuge, 3000 RPM, 10 min, 4 &deg;C and discard supernatant</li>
+	<li>Gently resuspend cells in 10 ml of ice cold CCMB80 buffer</li>
+	<li>Aliquot to pre-chilled eppendorf tubes and store at -80 &deg;C</li>								
+</ol>
+<h3>Transformation of chemically competent cells</h3>
+<ol>
+	<li>Thaw chemically competent cells on ice</li>
+	<li>Pipette the whole volume of the prepared Gibson reaction mixture into the vial with competent cells</li>
+	<li>Incubate on ice for 30 min</li>
+	<li>Heat-shock, incubate at 42 &deg;C for 30 sec</li>
+	<li>Incubate cells on ice for 2 min</li>
+	<li>Add 500-1ml SOC medium into the vial with cells</li>
+	<li>Incubate at 37 &deg;C for 1-1.5 hours on a rotatory shaker at 200 RPM</li>
+	<li>Centrifuge, 5 min, 500 RPM</li>
+	<li>Discard supernatant by decanting, thus leaving only c.a. 150 &mu;l of the supernatant in the vials</li>
+	<li>Resuspend cells in the reamining supernatant</li>
+	<li>Plate 150 &mu;l onto selective plates</li>
+	<li>Grow overnight at 37 &deg;C</li>
+</ol>
+<div class="accordion" id="transformation_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#transformation_notes_accordion" href="#transformation_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="transformation_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+	<ul>
+		<li>Flash-freeze prepared cells after aliquoting them</li>
+		<li>Test competence of prepared cells by transforming them with 1 &mu;l of pUC19 plasmid (Invitrogen). The transformation efficiency should be between 5x108 and 5x109 cfu/&mu;gDNA, ca 100-400 colonies per plate.</li>
+		<li>Thawing and refreezing competent cells significantly reduces transformation efficiency.</li>
+		<li>Filter-sterilized TSS buffer can be used instead of CCMB80 buffer to make chemically competent cells. To prepare 50 ml of TSS buffer add 5g PEG 8000 (or PEG 3350), 1.5 mL 1M MgCl<sub>2</sub> (or 0.30g MgCl<sub>2</sub>&middot;6H<sub>O</sub>), 2.5 mL DMSO and LB to 50 ml, adjust pH to 6.5 and store at 4&deg;C or -20&deg;C.</li>   
+		<li>For a detailed protocol of preparation of electrocompetent cells and electroporation see <a href="http://openwetware.org/wiki/Bacterial_transformation">http://openwetware.org/wiki/Bacterial_transformation</a>.</li>
+	</ul>							
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="tab-pane" id="plasmid">
+		
+
+
+
+
+
+<div class="page-header"><h1>Plasmid Purification</h1></div>
+
+<p>Commercial kits for plasmid isolation are quick and easy to use, e.g. Qiagen Qiaprep Spin Mini Kit.</p>
+<p>The below protocol for plasmid isolation is a modified version of the Qiagen protocol employing Qiagen Qiaprep Spin Mini Kit.</p>
+
+<ol>
+	<li><strong>(Before start) Prepare Buffers P1 and PE.</strong> Add the provided RNase A solution to Buffer P1 to a final concentration 100 &mu;g/ml, (Optional: Add the provided LyseBlue reagent to Buffer P1 for a final dilution of 1:1000). Store prepared Buffer P1 at 4&deg;C. Add ethanol (96-100%) to Buffer PE. The required volume of ethanol is indicated on the bottle with PE buffer.</li>
+	<li><strong>Pick a single colony and inoculate 5 ml LB medium with the appropriate selective antibiotic and incubate overnight on a rotatory shaker.</strong></li>
+	<li><strong>Pellet bacterial cells by centrifugation.</strong></li>
+	<li><strong>Resuspend pelleted bacterial cells in 250 &mu;l Buffer P1 in a microcentrifuge
+tube.</strong> Make sure bacteria are resuspended completely by pipetting up and
+down.</li>
+	<li><strong>Add 250 &mu;l Buffer P2 and mix by inverting the tube 10 times.</strong> The bacterial
+suspension in the tube should become viscous and slightly clear. (The bacterial suspension in the tube should turn blue if LyseBlue has been added to Buffer P1 in the step 1).</li>
+	<li><strong>Add 350 &mu;l Buffer N3 and mix by inverting the tube 10 times.</strong>The bacterial suspension in the tube should become cloudy. (The bacterial suspension in the tube should become colorless if LyseBlue has been added to Buffer P1 in the step 1).</li>
+	<li><strong>Centrifuge for 10 min at 13000 rpm.</strong></li>
+	<li><strong>Transfer the supernatant to the QIAprep spin column by pipetting.</strong></li>
+	<li><strong>Centrifuge at 13000 RPM for 1 min and discard the flow-through.</strong></li>
+	<li><strong>(Recommended) Wash the QIAprep spin column with 0.5 ml Buffer PB.
+Centrifuge at 13000 RPM for 1 min and discard the flow-through.</strong></li>
+	<li><strong>Wash the QIAprep spin column with 0.75ml Buffer PE. Centrifuge at 13000
+RPM for 1 min and discard the flow-through.</strong></li>
+	<li><strong>Remove residual wash buffer by centrifugation at 13000 RPM for 1 min.</strong></li>
+	<li><strong>Transfer the QIAprep column in a clean 1.5 ml microcentrifuge tube.</strong></li>
+	<li><strong>Add 50 &mu;l Buffer EB (10 mM Tris&middot;Cl, pH 8.5) or ddH<sub>2</sub>O on the membrane of
+the column, let stand for 1 min and centrifuge at 13000 RPM for 1 min.</strong>For increased DNA concentration, use 30-36 &mu;l of the Buffer EB or ddH<sub>2</sub>O and let the column stand for 1-3 min before centrifugation.</li>
+</ol>
+
+<div class="accordion" id="purification_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#purification_notes_accordion" href="#purification_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="purification_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+	<p>Plasmid DNA can be further concentrated by ethanol precipitation</p>
+	<ol>
+		<li>add 1/10 volume of sodium acetate, pH 5.2 and mix</li>
+		<li>add 2.5 volumes of cold 100% ethanol and mix</li>
+		<li>incubate at -20&deg;C for 45 min</li>
+		<li>centrifuge at 13000RPM for 15 min</li>
+		<li>discard supernatant</li>
+		<li>add 1ml of 75% ethanol and mix</li>
+		<li>centrifuge at 13000RPM for 1 min</li>
+		<li>dry and resuspend pellet in the appropriate volume of ddH<sub>2</sub>O or TE buffer</li>
+	</ol>
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="tab-pane" id="verification">
+		
+
+
+
+
+
+<div class="page-header"><h1>Sequence Verification</h1></div>
+
+<p>Several companies provide sequencing services (e.g. Source BioScience). Follow the instructions on the webpage of the particular company for detailed instructions on how to prepare and ship your samples for sequencing. Brief instructions for sequencing services of Source BioScience are as follows:</p>
+
+<ol>
+	<li><strong>Register/ create account on the Source BioScience website.</strong> Follow the website of Source BioScience for detailed instructions on how to register.</li>
+	<li><strong>Transfer 6 &mu;l of the isolated plasmid DNA to a clean 0.2 ml tube.</strong> For each sequencing reaction/sample prepare 6 &mu;l of the plasmid DNA (e.g. for sequencing of the same DNA with 2 different primers, prepare 12 &mu;l of the plasmid DNA).</li>
+	<li><strong>Transfer 10 &mu;l of the 10 &mu;M sequencing primer to a clean 0.2 ml tube.</strong> For each sequencing reaction/sample prepare 10 &mu;l of the sequencing primer (e.g. for sequencing of two plasmids with the same primer prepare 20 &mu;l of the sequencing primer).</li>
+	<li><strong>Place the online order for sequencing through the Source BioScience website.</strong></li>
+	<li><strong>Ship your samples according to instructions on the Source BioScience website.</strong></li>
+</ol>
+
+<div class="accordion" id="sequencing_notes_accordion">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#sequencing_notes_accordion" href="#sequencing_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		</div>
+		<div id="sequencing_notes" class="accordion-body collapse">
+			<div class="accordion-inner note">
+				
+	<ul>
+		<li>Some companies such as Source BioScience provide sequencing primers for a
+number of standard vectors. Check the website for the selection of available
+primers.</li>
+		<li>When preparing your own sequencing primer, design the primer 200 bp upstream of the sequence of interest, as the sequencing readout starts 200 bp downstream of the designed primer.</li>
+		<li>Write the automatically generated order number displayed at the end of ordering online on the envelope with samples sent for sequencing.</li>
+		<li>Sequencing files sent by the company can be compared by a number of
+software packages, such as web-based <a href="http://www.ebi.ac.uk/Tools/msa/clustalw2/">ClustalW</a></li>
+	</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+				</div>
+			</div>
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<p class="muted">Version 0.22-20140321. <a href="mailto:ja131@cam.ac.uk">Contact</a>. &copy;2013 Ajioka Lab.</p>
+			</div>
+		</div>
+		<iframe id="printframe" src="GibsonManual.pdf"></iframe>
+		<script src="./js/jquery-1.9.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function printManual()
+			{
+				var frame = $('iframe#printframe')[0];
+				frame.focus();
+				frame.contentWindow.print();
+			}
+			$('.a_tooltip').tooltip({placement:'right'});
+		</script>
+	</body>
+</html>
